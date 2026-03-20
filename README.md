@@ -1,16 +1,51 @@
-# React + Vite
+macOS Portfolio Clone
+A fully functional, high-performance macOS desktop replication built with React and Framer Motion. This project serves as a creative developer portfolio, featuring draggable windows, a dynamic dock, and integrated developer tools.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Key Features
 
-Currently, two official plugins are available:
+Interactive Terminal: A functional CLI that supports custom commands like help, clear, and gui-search.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+YouTube Music Integration: An embedded music player using iframes and YouTube's embed API.
 
-## React Compiler
+Dynamic Dock & Navbar: A macOS-style glassmorphism dock with active app indicators and a real-time system clock.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Responsive Glassmorphism: Fully styled with SCSS to mimic the Apple "Aero" blur and rounded aesthetic.
 
-## Expanding the ESLint configuration
+🛠️ Tech Stack
+1. Frontend: React.js (Hooks, Functional Components)
+2. Animations: Framer Motion (for window transitions and dock scaling)
+3. Styling: SCSS / SASS (Glassmorphism, Flexbox/Grid)
+4. Icons: SVG-based custom icons for a crisp look at any resolution.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Deployment: GitHub Pages / Vercel
+
+📂 Project Structure
+Plaintext
+src/
+├── assets/          # SVGs, Wallpapers, and Images
+├── components/
+│   ├── jsx/         # Global UI like Nav and Dock
+│   └── windows/     # Individual App Components (Github, VSCode, Gmail, etc.)
+├── styles/          # Modular SCSS files
+└── App.jsx          # Main Window Manager Logic
+
+⚙️ Installation & Setup
+Clone the repository:
+
+Step1:
+git clone https://github.com/harshit-chauhan/mac-os-portfolio.git
+Install dependencies:
+
+Step2:
+npm install
+Run in development mode:
+
+Step3:
+npm run dev
+Build for production:
+
+Step4:
+npm run build
+
+📝 License
+This project is open-source and available under the MIT License.
