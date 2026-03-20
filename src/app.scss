@@ -89,3 +89,27 @@ body {
 a, button, .icon, .window-header {
   cursor: pointer;
 }
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+  margin-top: -10px; // Half of max width to center it
+  margin-left: -10px;
+  mix-blend-mode: difference; // This makes it look great over any wallpaper
+}
+
+// Hide the system cursor globally
+body {
+  cursor: none !important;
+}
+
+// Optional: Force cursor back for standard elements if needed
+button, a, .icon {
+  cursor: none; 
+}
