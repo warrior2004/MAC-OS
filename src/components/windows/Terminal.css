@@ -1,0 +1,74 @@
+.terminal-container {
+  position: relative;
+  background-color: rgba(18, 18, 18, 0.98);
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: text;
+  overflow: hidden;
+}
+.terminal-container::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  z-index: 20;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+.terminal-container .terminal-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+  /* Custom Scrollbar */
+}
+.terminal-container .terminal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-container .terminal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.terminal-container .terminal-content .line {
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.terminal-container .terminal-content .line.output {
+  color: #bbbbbb;
+}
+.terminal-container .terminal-content .line.input {
+  color: #50fa7b;
+  font-weight: bold;
+}
+.terminal-container .terminal-content .prompt {
+  color: #8be9fd;
+  margin-right: 8px;
+}
+.terminal-container .terminal-content .input-line {
+  display: flex;
+  align-items: center;
+}
+.terminal-container .terminal-content .input-line input {
+  background: transparent;
+  border: none;
+  color: #f1fa8c;
+  outline: none;
+  flex: 1;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #ff79c6;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}/*# sourceMappingURL=Terminal.css.map */

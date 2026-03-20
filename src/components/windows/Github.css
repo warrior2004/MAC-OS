@@ -1,0 +1,104 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.cards::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+.cards::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+.cards::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+  background-clip: content-box;
+  border: 0px solid transparent;
+  background-clip: padding-box;
+}
+.cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cards .card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.cards .card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.cards .card img {
+  width: 100%;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #2a2a2c;
+}
+.cards .card h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.cards .card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+.cards .card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.cards .card .tags .tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  background: rgba(0, 122, 255, 0.15);
+  color: #007aff;
+  border-radius: 4px;
+  margin: 0;
+}
+.cards .card .urls {
+  display: flex;
+  gap: 12px;
+}
+.cards .card .urls a {
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.cards .card .urls a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.cards .card .urls a:nth-child(2):not(:empty) {
+  background: #007aff;
+}
+.cards .card .urls a:nth-child(2):not(:empty):hover {
+  background: #0063cc;
+}/*# sourceMappingURL=Github.css.map */

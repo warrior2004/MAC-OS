@@ -1,0 +1,94 @@
+
+.window {
+    height: 100%; // Let react-rnd handle the dimensions
+    width: 100%;
+    min-width: 320px;
+    background-color: rgba(40, 40, 43, 0.9); // Dark grey with slight transparency
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* macOS Window Shadow & Border */
+
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 0.5px rgba(0, 0, 0, 0.2);
+    
+    &.maximized {
+        border-radius: 0; // Standard macOS behavior when full screen
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .nav {
+        min-height: 30px; // Standard macOS title bar height
+        background: linear-gradient(to bottom, #3c3c3e, #323234);
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+        .dots {
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+
+            .dot {
+                height: 12px; // Slightly smaller for a sharper look
+                width: 12px;
+                border-radius: 50%;
+                position: relative;
+                border: 0.5px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .red {
+                background-color: #ff5f56;
+            }
+
+            .yellow {
+                background-color: #ffbd2e;
+            }
+
+            .green {
+                background-color: #27c93f;
+            }
+        }
+
+        .title {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            pointer-events: none; // Allows dragging via title area without text interference
+
+            p {
+                margin: 0;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+                font-size: 13px;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.6); // Muted white
+            }
+        }
+    }
+
+    .main-content {
+        flex: 1;
+        background-color: #1e1e1e; // Slightly darker than the nav for contrast
+        padding: 10px;
+        min-height: 0;
+    }
+}
+
+.minimized-window {
+    display: none; // Or use transform: scale(0) to animate to Dock
+}

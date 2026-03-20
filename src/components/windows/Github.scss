@@ -1,0 +1,119 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  max-height: 100%;
+  overflow-y: auto;
+  
+  // 1. The main scrollbar track (invisible background)
+  &::-webkit-scrollbar {
+    width: 8px;               // Slim width
+    background: transparent;  // Floating look
+  }
+
+  // 2. The draggable handle (The "Thumb")
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1); // Very subtle by default
+    border-radius: 10px;                  // Fully rounded ends
+    border: 2px solid transparent;        // Creates padding around the thumb
+    background-clip: content-box;         // Makes the border act as a gap
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25); // Brightens on hover
+      background-clip: content-box;
+      border: 0px solid transparent;
+      background-clip: padding-box;
+    }
+  }
+
+  // 3. The track (Optional: adds a very faint line)
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      background: #2a2a2c; // Placeholder color
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 16px;
+      flex-grow: 1; // Pushes tags/links to the bottom
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+
+      .tag {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        background: rgba(0, 122, 255, 0.15); // Mac Blue Tint
+        color: #007aff;
+        border-radius: 4px;
+        margin: 0;
+      }
+    }
+
+    .urls {
+      display: flex;
+      gap: 12px;
+
+      a {
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #fff;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        transition: background 0.2s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        // Specifically style the Demo link if it exists
+        &:nth-child(2):not(:empty) {
+          background: #007aff;
+          &:hover { background: #0063cc; }
+        }
+      }
+    }
+  }
+}

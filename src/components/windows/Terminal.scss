@@ -1,0 +1,92 @@
+.terminal-container {
+  position: relative; // Required for Matrix Canvas positioning
+  background-color: rgba(18, 18, 18, 0.98); // Slightly deeper black
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: text;
+  overflow: hidden; // Prevents canvas from leaking out during animation
+
+  // Optional: CRT Scanline effect
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.1) 50%
+    ), linear-gradient(
+      90deg, 
+      rgba(255, 0, 0, 0.02), 
+      rgba(0, 255, 0, 0.01), 
+      rgba(0, 0, 255, 0.02)
+    );
+    z-index: 20; // Above everything
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+  }
+
+  .terminal-content {
+    position: relative;
+    z-index: 1; // Below the Matrix Canvas (which is z-index 10)
+    height: 100%;
+    overflow-y: auto;
+    
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .line {
+      margin-bottom: 4px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      
+      &.output { 
+        color: #bbbbbb; 
+      }
+      &.input { 
+        color: #50fa7b; // Dracula Theme Green
+        font-weight: bold; 
+      }
+    }
+
+    .prompt {
+      color: #8be9fd; // Dracula Theme Cyan
+      margin-right: 8px;
+    }
+
+    .input-line {
+      display: flex;
+      align-items: center;
+
+      input {
+        background: transparent;
+        border: none;
+        color: #f1fa8c; // Dracula Theme Yellow
+        outline: none;
+        flex: 1;
+        font-family: inherit;
+        font-size: inherit;
+        caret-color: #ff79c6; // Pink blinking cursor
+      }
+    }
+  }
+}
+
+// Ensure the canvas stretches to fill the container perfectly
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}

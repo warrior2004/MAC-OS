@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.desktop-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/Deadpool.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.desktop-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+.desktop-container .window-workspace {
+  position: absolute;
+  top: 32px;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.desktop-container .window-workspace > * {
+  pointer-events: auto;
+}
+.desktop-container .dock-wrapper {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+}/*# sourceMappingURL=app.css.map */

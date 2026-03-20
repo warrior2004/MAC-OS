@@ -1,0 +1,115 @@
+.note-content {
+  padding: 2rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: #1e1e1e; // Matches VS Code dark background
+
+  /* Custom Scrollbar for a sleek look */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #cccccc;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Remark-GFM Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+
+    th, td {
+      border: 1px solid #3c3c3c;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2d2d2d;
+      color: #ffffff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #252525;
+    }
+  }
+
+  /* Code Blocks & Syntax Highlighter */
+  // Styles the container added by Prism
+  div[class*="language-"], 
+  pre {
+    margin: 1.5rem 0 !important;
+    border-radius: 8px !important;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
+    font-size: 0.9rem !important;
+    background: #0d0d0d !important; // Deep black for code contrast
+    border: 1px solid #333;
+    
+    // Smooth horizontal scroll for long code lines
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+  }
+
+  /* Inline Code (e.g. `const x = 5`) */
+  code:not([class*="language-"]) {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: #e06c75; // Subtle red/pink for pop
+  }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.5rem 1.5rem;
+    border-left: 4px solid #007aff;
+    background: rgba(0, 122, 255, 0.1);
+    color: #b0b0b0;
+    font-style: italic;
+  }
+}

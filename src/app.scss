@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; // Prevents the "bounce" scroll on trackpads
+}
+
+.desktop-container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./assets/Deadpool.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    // The Scrim: Standard macOS-style top shadow for menu readability
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; 
+        background: linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0.4) 0%, 
+            transparent 100%
+        );
+        pointer-events: none; 
+        z-index: 5; 
+    }
+
+
+
+    // The restricted area where windows are allowed to move
+    .window-workspace {
+        position: absolute;
+        top: 32px;    // Starts exactly below the Nav
+        bottom: 100px; // Ends above the Dock area
+        left: 0;
+        right: 0;
+        z-index: 100;
+        pointer-events: none; // Allows clicking through the empty workspace to the wallpaper
+
+        // Ensure children (Windows) reactivate pointer events
+        & > * {
+            pointer-events: auto;
+        }
+    }
+
+    // Dock container positioning
+    .dock-wrapper {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+    }
+}
