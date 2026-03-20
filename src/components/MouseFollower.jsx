@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { motion, useSpring } from "framer-motion";
 
 const MouseFollower = () => {
-  // We define 6 dots for the trail
   const numDots = 6;
   
   // Create an array of springs for X and Y coordinates
@@ -35,11 +34,10 @@ const MouseFollower = () => {
           style={{
             translateX: dot.x,
             translateY: dot.y,
-            // Make trailing dots smaller and more transparent
             width: 20 - index * 2,
             height: 20 - index * 2,
             opacity: 1 - index * 0.15,
-            zIndex: 9999 - index, // Ensure lead dot is on top
+            zIndex: 9999 - index, 
           }}
         />
       ))}
