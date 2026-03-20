@@ -49,4 +49,27 @@ html, body, #root {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2000;
+}
+
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.452);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+body {
+  cursor: none;
+}
+
+a, button, .icon, .window-header {
+  cursor: pointer;
 }/*# sourceMappingURL=app.css.map */

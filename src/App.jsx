@@ -8,6 +8,7 @@ import PDFWindow from "./components/windows/PDFViewer";
 import Terminal from "./components/windows/Terminal";
 import YouTubeMusic from "./components/windows/YoutubeMusic";
 import Calendar from "./components/windows/Calender";
+import MouseFollower from "./components/MouseFollower";
 import { AnimatePresence } from "framer-motion";
 
 const App = () => {
@@ -146,6 +147,8 @@ const App = () => {
               onFocus={() => handleWindowAction("calender", "focus")}
             />
           )}
+
+          <MouseFollower />
 
         </AnimatePresence>
       </div>

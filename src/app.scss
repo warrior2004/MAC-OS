@@ -64,3 +64,28 @@ html, body, #root {
         z-index: 2000;
     }
 }
+
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.452); // Semi-transparent white
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px); // Glassmorphism effect
+  border-radius: 50%;
+  pointer-events: none; // Crucial: allows you to click buttons "through" the circle
+  z-index: 9999;
+  mix-blend-mode: difference; // Optional: Inverts color based on background
+}
+
+// Hide the default system cursor on the desktop
+body {
+  cursor: none;
+}
+
+// Show the pointer back for buttons and links
+a, button, .icon, .window-header {
+  cursor: pointer;
+}
