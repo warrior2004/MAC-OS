@@ -49,49 +49,4 @@ html, body, #root {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2000;
-}
-
-.custom-cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.452);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(4px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-}
-
-body {
-  cursor: none;
-}
-
-a, button, .icon, .window-header {
-  cursor: pointer;
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  backdrop-filter: blur(2px);
-  margin-top: -10px;
-  margin-left: -10px;
-  mix-blend-mode: difference;
-}
-
-body {
-  cursor: none !important;
-}
-
-button, a, .icon {
-  cursor: none;
 }/*# sourceMappingURL=app.css.map */
