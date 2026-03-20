@@ -19,15 +19,6 @@ Responsive Glassmorphism: Fully styled with SCSS to mimic the Apple "Aero" blur 
 
 Deployment: GitHub Pages / Vercel
 
-📂 Project Structure
-Plaintext
-src/
-├── assets/          # SVGs, Wallpapers, and Images
-├── components/
-│   ├── jsx/         # Global UI like Nav and Dock
-│   └── windows/     # Individual App Components (Github, VSCode, Gmail, etc.)
-├── styles/          # Modular SCSS files
-└── App.jsx          # Main Window Manager Logic
 
 ⚙️ Installation & Setup
 Clone the repository:
